@@ -1,6 +1,6 @@
 # mindsphere-mqtt-agent
 A Spring Boot based MQTT Client that runs as an application in MindSphere. It is subscribed to MQTT broker through TLS secured connection. This MindSphere application
-receives timeseries data a payload and ingests data accordingly to relevant asset in MindSphere. For this service, you need to have relevant publisher to notify. Please refer to
+receives timeseries data as a payload and ingests data accordingly to relevant asset in MindSphere. For this service, you need to have relevant publisher to notify. Please refer to
 mindsphere-mqtt-publisher project within this repository.
 
 ## Overview
@@ -15,7 +15,7 @@ The following list specifies the prerequisites one should have before deploying 
 - Mindsphere Java SDK needs to be downloaded from the [MindSphere Java JDK](https://developer.mindsphere.io/resources/mindsphere-sdk-java-v2/index.html). This needed to be installed
 as dependency to your local maven repository. For this use case I have used MindSphere Java SDK V2.
 - An asset with relevant aspect(s) in MindSphere
-- For TLS communication iwith MQTT broker, create relevant certificate files. Refer to section [Configuring Certificates](#configuring-certificates).
+- For TLS communication with MQTT broker, create relevant certificate files. Refer to section [Configuring Certificates](#configuring-certificates).
 - Configure MQTT connection settings. Refer to section [Configuring MQTT](#configuring-mqtt)
 - Cloud Foundry CLI
 - MindSphere Cloud Foundry Access
@@ -41,7 +41,7 @@ publishing only and no session information is persisted. Allowable entries are t
 
 **mqtt.connectionTimeout** - Connection timeout for your MQTT broker connectivity. Needs to be specified in seconds
 
-**mqtt.clientId** - Unique Client Id for your publisher
+**mqtt.clientId** - Unique Client Id for your agent
 
 **mqtt.hostname** - Hostname of your MQTT broker. For Eclipse Mosquitto it is `test.mosquito.org`
 
@@ -63,7 +63,7 @@ This application supports only PEM format.
 ## Configuring MindSphere
 The `application.properties` file provides properties using which you can configure the settings for MindSphere.
 
-**mindsphere.technicalCredentials** - If set true, the application uses technical user credentials for accessing the MindSphere API, Else if false it uses Application Credentials. 
+**mindsphere.technicalCredentials** - If set true, the application uses technical user credentials for accessing the MindSphere API, else if false it uses Application Credentials. 
 
 **mindsphere.clientId** - If technicalCredentials is set to true this is considered for clientId. For Application credentials, this acts as KeyStore ClientId.
 
@@ -77,11 +77,11 @@ The `application.properties` file provides properties using which you can config
 
 **mindsphere.user-tenant** - Only used in the case of Application Credentials and represents name of the user tenant.
 
-In the case of developer tenant, the host tenant name and user tenant name as same if you are using application credentials. Though for this example these credentials are configured as part of your 
+In the case of developer tenant, the host tenant name and user tenant name are same if you are using application credentials. Though for this example these credentials are configured as part of your 
 application properties, the ideal way is to set these as cloud foundry environment variables and access them accordingly in your application. To know more about MindSphere associated concepts please refer 
 to section [References](#references).  
 
-## MQTT Payload amd Topic
+## MQTT Payload and Topic
 
 The payload received will be of type TimeSeriesData. The structure of TimeSeriesData is as follows:
 
