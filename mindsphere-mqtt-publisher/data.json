@@ -1,0 +1,49 @@
+{
+	"assetId": "d7ba0647cb7c47c4aacaa93d4ee2ed2c",
+	"propertySetName": "IndiaDemoAspect",
+	"timeseriesData": [
+		
+	    {
+	    
+	      "dataPoints" : [
+	      
+	           {
+	              "name" : "Humidity",
+	              "value" : 20.0
+	           
+	           },
+	           
+	            {
+	              "name" : "Temperature",
+	              "value" : 20.0
+	           
+	           }
+	      
+	      ]	      
+	      
+	    },
+	    
+	    {
+	    
+	      "dataPoints" : [
+	      
+	           {
+	              "name" : "Humidity",
+	              "value" : 25.0
+	           
+	           },
+	           
+	            {
+	              "name" : "Temperature",
+	              "value" : 10.0
+	           
+	           }
+	      
+	      ]	      
+	      
+	    }
+	  
+	  
+		
+	]
+}
