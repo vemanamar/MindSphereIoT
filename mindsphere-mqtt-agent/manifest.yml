@@ -1,0 +1,5 @@
+applications:
+  - name: <your-app-name>
+    instances: 1
+    memory: 1GB
+    path: ./target/mindsphere-mqtt-agent-0.0.1-SNAPSHOT.jar
